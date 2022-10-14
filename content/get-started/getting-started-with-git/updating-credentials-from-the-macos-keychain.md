@@ -22,7 +22,7 @@ We recommend you either [configure SSH](/articles/generating-an-ssh-key) or upgr
 
 {% endtip %}
 
-{% data reusables.user_settings.password-authentication-deprecation %}
+{% data reusables.user-settings.password-authentication-deprecation %}
 
 ## Updating your credentials via Keychain Access
 
@@ -40,7 +40,7 @@ Through the command line, you can use the credential helper directly to erase th
 $ git credential-osxkeychain erase
 host={% data variables.command_line.codeblock %}
 protocol=https
-> <em>[Press Return]</em>
+> [Press Return]
 ```
 
 If it's successful, nothing will print out. To test that it works, try and clone a private repository from {% data variables.product.product_location %}. If you are prompted for a password, the keychain entry was deleted.

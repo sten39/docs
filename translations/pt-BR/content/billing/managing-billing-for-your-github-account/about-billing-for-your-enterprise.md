@@ -1,7 +1,6 @@
 ---
 title: Sobre a cobrança para a sua empresa
-intro: Você pode visualizar as informações de cobrança para a sua empresa.
-product: '{% data reusables.gated-features.enterprise-accounts %}'
+intro: 'Você pode visualizar as informações de cobrança da empresa{% ifversion ghec or ghes %} conta corporativa em {% data variables.product.prodname_dotcom_the_website %}{% endif %}.'
 redirect_from:
   - /admin/overview/managing-billing-for-your-enterprise
   - /enterprise/admin/installation/managing-billing-for-github-enterprise
@@ -14,9 +13,14 @@ versions:
 type: overview
 topics:
   - Enterprise
-shortTitle: Cobrança para sua empresa
+shortTitle: Billing for your enterprise
+ms.openlocfilehash: 1b048c16293b7183636bc383ca926c4e5c7f0bd2
+ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 09/05/2022
+ms.locfileid: '147573406'
 ---
-
 ## Sobre a cobrança para a sua empresa
 
 {% ifversion ghae %}
@@ -29,24 +33,28 @@ Se você adicionar um usuário licenciado no meio do mês, esse usuário será i
 
 Por exemplo, aqui estão os custos para os usuários com licenças em datas diferentes.
 
-| Usuário   | Datas de licença                                                   | Dias contados | Custo   |
-| --------- | ------------------------------------------------------------------ | ------------- | ------- |
-| @octocat  | 1 de Janeiro - 31 de Janeiro                                       | 31            | $ 39    |
-| @robocat  | 1 de fevereiro - 28 de fevereiro                                   | 28            | $ 35,23 |
-| @devtocat | 15 de Janeiro - 31 de Janeiro                                      | 17            | $ 21,39 |
-| @doctocat | 1 de Janeiro - 15 de Janeiro                                       | 31            | $ 39    |
-| @prodocat | 7 de Janeiro - 15 de Janeiro                                       | 25            | $ 31,45 |
-| @monalisa | 1 de janeiro - 7 de janeiro<br>15 de janeiro - 31 de janeiro | 31            | $ 39    |
+Usuário | Datas de licença | Dias contados | Custo
+---- | ------------ | ------- | -----
+@octocat | 1 de Janeiro - 31 de Janeiro | 31 | US$ 39
+@robocat | 1 de fevereiro - 28 de fevereiro | 28 | $ 35,23
+@devtocat  | 15 de Janeiro - 31 de Janeiro | 17 | $ 21,39
+@doctocat | 1 de Janeiro - 15 de Janeiro | 31 | US$ 39
+@prodocat | 7 de Janeiro - 15 de Janeiro | 25 | $ 31,45
+@monalisa | 1º de janeiro – 7 de janeiro<br>15 de Janeiro - 31 de Janeiro | 31 | US$ 39
 
 {% data variables.product.prodname_ghe_managed %} tem uma instância mínima de 500 usuários. {% data variables.product.company_short %} cobra de você um mínimo de 500 usuários por instância, mesmo que haja menos de 500 usuários com uma licença nesse dia.
 
-Você pode ver seu uso atual no seu [Portal da conta do Azure](https://portal.azure.com).
+Veja seu uso atual no [portal da conta do Azure](https://portal.azure.com).
 
 {% elsif ghec or ghes %}
 
 {% ifversion ghec %}
 
-{% data variables.product.company_short %} faz a cobrança mensal para o número total de membros da sua conta corporativa, bem como quaisquer serviços adicionais que você usar com {% data variables.product.prodname_ghe_cloud %}.
+Quando você usa uma conta corporativa em {% data variables.product.product_location %}, a conta corporativa é o ponto central para toda a cobrança em sua empresa, incluindo as organizações que sua empresa possui.
+
+Se você usar {% data variables.product.product_name %} com uma organização individual e ainda não tiver uma conta corporativa, crie uma conta corporativa e adicione a sua organização. Para obter mais informações, confira "[Com criar uma conta empresarial](/admin/overview/creating-an-enterprise-account)".
+
+{% data variables.product.company_short %} cobra mensalmente o número total de licenças de estação para sua conta corporativa, bem como quaisquer serviços adicionais que você usa com {% data variables.product.prodname_ghe_cloud %}, como minutos de {% data variables.product.prodname_actions %}. Se você usar uma organização autônoma em {% data variables.product.product_name %}, será cobrado no nível da organização por todo o uso. Para obter mais informações sobre as estações de licença da sua conta, confira "[Sobre preços por usuário](/billing/managing-billing-for-your-github-account/about-per-user-pricing)".
 
 {% elsif ghes %}
 
@@ -54,35 +62,21 @@ Cada usuário em {% data variables.product.product_location %} consome uma esta�
 
 {% endif %}
 
-{% data reusables.billing.about-invoices-for-enterprises %} Para obter mais informações sobre o uso e faturas, consulte "[Visualizando a assinatura e uso para a sua conta corporativa](/billing/managing-billing-for-your-github-account/viewing-the-subscription-and-usage-for-your-enterprise-account)" e {% ifversion ghes %}"[Gerenciando faturas para a sua empresa](/enterprise-cloud@latest/billing/managing-billing-for-your-github-account/managing-invoices-for-your-enterprise)" na documentação de {% data variables.product.prodname_ghe_cloud %}.{% elsif ghec %}"[Gerenciando faturas para a sua empresa](/billing/managing-billing-for-your-github-account/managing-invoices-for-your-enterprise)."{% endif %}
+{% ifversion ghec %}Para clientes do {% data variables.product.prodname_ghe_cloud %} com uma conta corporativa, {% data variables.product.company_short %} a cobrança ocorre na conta corporativa em {% data variables.product.prodname_dotcom_the_website %}. Para clientes com fatura, cada{% elsif ghes %}Para clientes com fatura {% data variables.product.prodname_enterprise %}, {% data variables.product.company_short %} a cobrança ocorre na conta corporativa em {% data variables.product.prodname_dotcom_the_website %}. Cada{% endif %} fatura inclui uma única cobrança de fatura para todos os seus serviços de {% data variables.product.prodname_dotcom_the_website %} pagos e as instâncias de qualquer {% data variables.product.prodname_ghe_server %}. Para mais informações sobre {% ifversion ghes %} licenciamento, uso e faturas{% elsif ghec %}uso e faturas{% endif %}, confira o seguinte{% ifversion ghes %} na documentação de {% data variables.product.prodname_ghe_cloud %}.{% else %}.{% endif %}
 
-Os administradores da conta corporativa em {% data variables.product.prodname_dotcom_the_website %} podem acessar e gerenciar a cobrança da empresa.
+{%- ifversion ghes %}
+- "[Sobre os preços por usuário](/enterprise-cloud@latest/billing/managing-billing-for-your-github-account/about-per-user-pricing)" {%- endif %}
+- "[Como ver a assinatura e o uso da sua conta corporativa]({% ifversion ghes %}/enterprise-cloud@latest{% endif %}/billing/managing-billing-for-your-github-account/viewing-the-subscription-and-usage-for-your-enterprise-account)"
+- "[Como gerenciar faturas da sua empresa]({% ifversion ghes %}/enterprise-cloud@latest{% endif %}/billing/managing-billing-for-your-github-account/managing-invoices-for-your-enterprise)"
 
-{% ifversion ghec %}
+Os administradores da conta corporativa em {% data variables.product.prodname_dotcom_the_website %} podem acessar e gerenciar a cobrança da empresa. Para obter mais informações, confira "[Funções em uma empresa]({% ifversion ghes %}/enterprise-cloud@latest{% endif %}/admin/user-management/managing-users-in-your-enterprise/roles-in-an-enterprise){% ifversion ghec %}".{% elsif ghes %}" na documentação do {% data variables.product.prodname_ghe_cloud %}.{% endif %}
 
-Cada membro da sua conta corporativa com um endereço de e-mail exclusivo consome uma licença. Os gerentes de cobrança não consomem uma licença. Cada colaborador externo em um repositório privado que uma organização possui na sua empresa consome uma licença, a menos que o repositório privado seja uma bifurcação. Cada convidado à sua conta corporativa, incluindo proprietários, organizações e colaboradores externos, consuma uma licença. Para mais informações sobre funções em uma conta corporativa, consulte "[Funções em uma empresa](/github/setting-up-and-managing-your-enterprise/managing-users-in-your-enterprise/roles-in-an-enterprise)" e "[Convidando pessoas para gerenciar sua empresa](/admin/user-management/managing-users-in-your-enterprise/inviting-people-to-manage-your-enterprise). "
-
-{% ifversion ghec %}
-{% data reusables.enterprise-accounts.billing-microsoft-ea-overview %} Para obter mais informações, consulte "[Conectando uma assinatura do Azure à sua empresa](/billing/managing-billing-for-your-github-account/connecting-an-azure-subscription-to-your-enterprise)".
+{% ifversion ghec %} {% data reusables.enterprise-accounts.billing-microsoft-ea-overview %} Para obter mais informações, confira "[Como conectar uma assinatura do Azure à sua empresa](/billing/managing-billing-for-your-github-account/connecting-an-azure-subscription-to-your-enterprise)".
 {% endif %}
 
-{% endif %}
-
-{% ifversion ghes %}
-
-{% data reusables.billing.ghes-with-no-enterprise-account %}
+{% ifversion ghes %} {% data reusables.billing.ghes-with-no-enterprise-account %} {% endif %}
 
 {% endif %}
+## Leitura adicional
 
-## Sobre a sincronização do uso da licença
-
-{% data reusables.enterprise.about-deployment-methods %}
-
-{% data reusables.enterprise-licensing.about-license-sync %} Para mais informações, consulte {% ifversion ghec %}"[Sincronizando o uso da licença entre {% data variables.product.prodname_ghe_server %} e {% data variables.product.prodname_ghe_cloud %}](/enterprise-server/billing/managing-your-license-for-github-enterprise/syncing-license-usage-between-github-enterprise-server-and-github-enterprise-cloud)" na documentação de {% data variables.product.prodname_ghe_server %}.{% elsif ghes %}"[Sincronizando o uso da licença entre {% data variables.product.prodname_ghe_server %} e {% data variables.product.prodname_ghe_cloud %}](/billing/managing-your-license-for-github-enterprise/syncing-license-usage-between-github-enterprise-server-and-github-enterprise-cloud)."{% endif %}
-
-{% endif %}
-
-## Leia mais
-
-- "[Sobre as contas corporativas](/admin/overview/about-enterprise-accounts)"{% ifversion ghec or ghes %}
-- "[Sobre licenças para o GitHub Enterprise](/billing/managing-your-license-for-github-enterprise/about-licenses-for-github-enterprise)"{% endif %}
+- "[Sobre as contas corporativas](/admin/overview/about-enterprise-accounts)"

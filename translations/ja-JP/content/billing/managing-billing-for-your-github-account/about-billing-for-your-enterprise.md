@@ -1,7 +1,6 @@
 ---
-title: About billing for your enterprise
-intro: Enterprise の支払情報を確認できます。
-product: '{% data reusables.gated-features.enterprise-accounts %}'
+title: Enterpriseの支払いについて
+intro: 'Enterpriseの{% ifversion ghec or ghes %}{% data variables.product.prodname_dotcom_the_website %}上のアカウント{% endif %}に対する支払い情報を見ることができます。'
 redirect_from:
   - /admin/overview/managing-billing-for-your-enterprise
   - /enterprise/admin/installation/managing-billing-for-github-enterprise
@@ -15,9 +14,14 @@ type: overview
 topics:
   - Enterprise
 shortTitle: Billing for your enterprise
+ms.openlocfilehash: 1b048c16293b7183636bc383ca926c4e5c7f0bd2
+ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/05/2022
+ms.locfileid: '147573410'
 ---
-
-## About billing for your enterprise
+## Enterpriseの支払いについて
 
 {% ifversion ghae %}
 
@@ -29,60 +33,50 @@ shortTitle: Billing for your enterprise
 
 たとえば、異なる日付でライセンスを付与した場合のユーザ料金は次のとおりです。
 
-| ユーザ       | ライセンスされた日                       | カウント日数 | 料金     |
-| --------- | ------------------------------- | ------ | ------ |
-| @octocat  | 1月1日～1月31日                      | 31     | $39    |
-| @robocat  | 2月1日～2月28日                      | 28     | $35.23 |
-| @devtocat | 1月15日～1月31日                     | 17     | $21.39 |
-| @doctocat | 1月1日～1月15日                      | 31     | $39    |
-| @prodocat | 1月7日～1月15日                      | 25     | $31.45 |
-| @monalisa | 1月1日～1月7日、<br>1月15日～1月31日 | 31     | $39    |
+User | ライセンスされた日 | カウント日数 | コスト
+---- | ------------ | ------- | -----
+@octocat | 1月1日～1月31日 | 31 | $39
+@robocat | 2月1日～2月28日 | 28 | $35.23
+@devtocat  | 1月15日～1月31日 | 17 | $21.39
+@doctocat | 1月1日～1月15日 | 31 | $39
+@prodocat | 1月7日～1月15日 | 25 | $31.45
+@monalisa | 1 月 1 日から 1 月 7 日<br>1月15日～1月31日 | 31 | $39
 
 {% data variables.product.prodname_ghe_managed %} のインスタンスごとの最小ユーザ数は 500 です。 {% data variables.product.company_short %} は、同日にライセンスを付与されたユーザが 500 未満の場合でも、インスタンスごとに最低 500 ユーザ分の料金を請求します。
 
-[Azure アカウントポータル](https://portal.azure.com)で現在の使用状況を確認できます。
+現在の使用状況は、[Azure アカウント ポータル](https://portal.azure.com)で確認できます。
 
 {% elsif ghec or ghes %}
 
 {% ifversion ghec %}
 
-{% data variables.product.company_short %} bills monthly for the total number of members in your enterprise account, as well as any additional services you use with {% data variables.product.prodname_ghe_cloud %}.
+{% data variables.product.product_location %} で Enterprise アカウントを使うと、その Enterprise アカウントは、Enterprise が所有する Organization を含め、Enterprise 内でのすべての支払いに対する中心ポイントとなります。
+
+個別の Organization で {% data variables.product.product_name %} を使っているものの、まだ Enterprise アカウントを持っていない場合は、Enterprise アカウントを作成し、Organization を追加します。 詳細については、「[Creating an enterprise account (エンタープライズ アカウントの作成)](/admin/overview/creating-an-enterprise-account)」を参照してください。
+
+{% data variables.product.company_short %} では、Enterprise アカウントのライセンス シートの合計数と、{% data variables.product.prodname_ghe_cloud %} で使う追加のサービス ("{% data variables.product.prodname_actions %} 分" など) に対して毎月請求が発生します。 {% data variables.product.product_name %} でスタンドアロンの Organization を使う場合、すべての利用状況に対して Organization レベルで請求されます。 請求書のライセンス シートについて詳しくは、「[ユーザーごとの価格付けについて](/billing/managing-billing-for-your-github-account/about-per-user-pricing)」を参照してください。
 
 {% elsif ghes %}
 
-Each user on {% data variables.product.product_location %} consumes a seat on your license. {% data variables.product.company_short %} bills monthly for the total number of seats consumed on your license.
+{% data variables.product.product_location %}上の各ユーザは、ライセンスのシートを1つ消費します。 {% data variables.product.company_short %}は、ライセンスで消費されたシートの総数に対して月ごとに請求します。
 
 {% endif %}
 
-{% data reusables.billing.about-invoices-for-enterprises %} For more information about usage and invoices, see "[Viewing the subscription and usage for your enterprise account](/billing/managing-billing-for-your-github-account/viewing-the-subscription-and-usage-for-your-enterprise-account)" and {% ifversion ghes %}"[Managing invoices for your enterprise](/enterprise-cloud@latest/billing/managing-billing-for-your-github-account/managing-invoices-for-your-enterprise)" in the {% data variables.product.prodname_ghe_cloud %} documentation.{% elsif ghec %}"[Managing invoices for your enterprise](/billing/managing-billing-for-your-github-account/managing-invoices-for-your-enterprise)."{% endif %}
+{% ifversion ghec %}Enterprise アカウントを持つ {% data variables.product.prodname_ghe_cloud %} のお客様の場合、{% data variables.product.company_short %} では、{% data variables.product.prodname_dotcom_the_website %} の Enterprise アカウントを通じて請求されます。 請求書払いのお客様の場合、各{% elsif ghes %}請求書払いの {% data variables.product.prodname_enterprise %} のお客様の場合、{% data variables.product.company_short %} では、{% data variables.product.prodname_dotcom_the_website %} の Enterprise アカウントを通じて請求されます。 各{% endif %}請求書には、有料のすべての {% data variables.product.prodname_dotcom_the_website %} サービスと、すべての {% data variables.product.prodname_ghe_server %} インスタンスに対する 1 つの請求料金が含まれています。 {% ifversion ghes %}ライセンス、使用状況、請求書の{% elsif ghec %}使用状況と請求書{% endif %}に関する詳しい情報については、{% ifversion ghes %}{% data variables.product.prodname_ghe_cloud %}ドキュメンテーション中の以下を参照してください。{% else %}{% endif %}
 
-Administrators for your enterprise account on {% data variables.product.prodname_dotcom_the_website %} can access and manage billing for the enterprise.
+{%- ifversion ghes %}
+- 「[ユーザごとの価格付けについて](/enterprise-cloud@latest/billing/managing-billing-for-your-github-account/about-per-user-pricing)」 {%- endif %}
+- 「[Enterprise アカウントのサブスクリプションを使用状況の確認]({% ifversion ghes %}/enterprise-cloud@latest{% endif %}/billing/managing-billing-for-your-github-account/viewing-the-subscription-and-usage-for-your-enterprise-account)」
+- 「[Enterprise の請求書管理]({% ifversion ghes %}/enterprise-cloud@latest{% endif %}/billing/managing-billing-for-your-github-account/managing-invoices-for-your-enterprise)」
 
-{% ifversion ghec %}
+{% data variables.product.prodname_dotcom_the_website %}上のEnterpriseアカウントの管理者は、Enterpriseの支払いにアクセスし、管理できます。 詳細については、{% data variables.product.prodname_ghe_cloud %} ドキュメントの「[Enterprise でのロール]({% ifversion ghes %}/enterprise-cloud@latest{% endif %}/admin/user-management/managing-users-in-your-enterprise/roles-in-an-enterprise){% ifversion ghec %}."{% elsif ghes %}」を参照してください。{% endif %}
 
-Each member of your enterprise account with a unique email address consumes a license. Billing managers do not consume a license. Each outside collaborator on a private repository that an organization in your enterprise owns consumes a license, unless the private repository is a fork. Each invitee to your enterprise account, including owners, members of organizations, and outside collaborators, consume a license. For more information about roles in an enterprise account, see "[Roles in an enterprise](/github/setting-up-and-managing-your-enterprise/managing-users-in-your-enterprise/roles-in-an-enterprise)" and "[Inviting people to manage your enterprise](/admin/user-management/managing-users-in-your-enterprise/inviting-people-to-manage-your-enterprise)."
-
-{% ifversion ghec %}
-{% data reusables.enterprise-accounts.billing-microsoft-ea-overview %} For more information, see "[Connecting an Azure subscription to your enterprise](/billing/managing-billing-for-your-github-account/connecting-an-azure-subscription-to-your-enterprise)."
+{% ifversion ghec %} {% data reusables.enterprise-accounts.billing-microsoft-ea-overview %} 詳しくは、「[Azure サブスクリプションを Enterprise に接続する](/billing/managing-billing-for-your-github-account/connecting-an-azure-subscription-to-your-enterprise)」をご覧ください。
 {% endif %}
 
-{% endif %}
-
-{% ifversion ghes %}
-
-{% data reusables.billing.ghes-with-no-enterprise-account %}
+{% ifversion ghes %} {% data reusables.billing.ghes-with-no-enterprise-account %} {% endif %}
 
 {% endif %}
+## 参考資料
 
-## About synchronization of license usage
-
-{% data reusables.enterprise.about-deployment-methods %}
-
-{% data reusables.enterprise-licensing.about-license-sync %} For more information, see {% ifversion ghec %}"[Syncing license usage between {% data variables.product.prodname_ghe_server %} and {% data variables.product.prodname_ghe_cloud %}](/enterprise-server/billing/managing-your-license-for-github-enterprise/syncing-license-usage-between-github-enterprise-server-and-github-enterprise-cloud)" in the {% data variables.product.prodname_ghe_server %} documentation.{% elsif ghes %}"[Syncing license usage between {% data variables.product.prodname_ghe_server %} and {% data variables.product.prodname_ghe_cloud %}](/billing/managing-your-license-for-github-enterprise/syncing-license-usage-between-github-enterprise-server-and-github-enterprise-cloud)."{% endif %}
-
-{% endif %}
-
-## 参考リンク
-
-- "[About enterprise accounts](/admin/overview/about-enterprise-accounts)"{% ifversion ghec or ghes %}
-- "[About licenses for GitHub Enterprise](/billing/managing-your-license-for-github-enterprise/about-licenses-for-github-enterprise)"{% endif %}
+- "[Enterprise アカウントについて](/admin/overview/about-enterprise-accounts)"
