@@ -32,7 +32,7 @@ You can use the {% data variables.product.prodname_codeql_cli %} to run {% data 
 
 {% data reusables.code-scanning.what-is-codeql-cli %}
 
-Alternatively, you can use {% data variables.product.prodname_actions %} to run {% data variables.product.prodname_code_scanning %} within {% data variables.product.product_name %}. For information about {% data variables.product.prodname_code_scanning %} using actions, see "[Setting up {% data variables.product.prodname_code_scanning %} for a repository](/code-security/secure-coding/setting-up-code-scanning-for-a-repository)." For an overview of the options for CI systems, see "[About CodeQL {% data variables.product.prodname_code_scanning %} in your CI system](/code-security/secure-coding/about-codeql-code-scanning-in-your-ci-system)".
+Alternatively, you can use {% data variables.product.prodname_actions %} to run {% data variables.product.prodname_code_scanning %} within {% data variables.product.product_name %}. For information about {% data variables.product.prodname_code_scanning %} using actions, see "[Configuring {% data variables.product.prodname_code_scanning %} for a repository](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning-for-a-repository)." For an overview of the options for CI systems, see "[About CodeQL {% data variables.product.prodname_code_scanning %} in your CI system](/code-security/secure-coding/about-codeql-code-scanning-in-your-ci-system)".
 
 {% data reusables.code-scanning.licensing-note %}
 
@@ -78,9 +78,9 @@ If you use the {% data variables.product.prodname_codeql_cli %} to analyze code 
 {% endnote %}
 {% endif %}
 
-## Testing the {% data variables.product.prodname_codeql_cli %} set up
+## Testing the {% data variables.product.prodname_codeql_cli %} configuration
 
-After you extract the {% data variables.product.prodname_codeql_cli %} bundle, you can run the following command to verify that the CLI is correctly set up to create and analyze databases.
+After you extract the {% data variables.product.prodname_codeql_cli %} bundle, you can run the following command to verify that the CLI is correctly configured to create and analyze databases.
 
 - `codeql resolve qlpacks` if `/<extraction-root>/codeql` is on the `PATH`.
 - `/<extraction-root>/codeql/codeql resolve qlpacks` otherwise.
@@ -112,7 +112,7 @@ You should check that the output contains the expected languages and also that t
 
 ## Generating a token for authentication with {% data variables.product.product_name %}
 
-Each CI server needs a {% data variables.product.prodname_github_app %} or personal access token for the {% data variables.product.prodname_codeql_cli %} to use to upload results to {% data variables.product.product_name %}. You must use an access token or a {% data variables.product.prodname_github_app %} with the `security_events` write permission. If CI servers already use a token with this scope to checkout repositories from {% data variables.product.product_name %}, you could potentially allow the {% data variables.product.prodname_codeql_cli %} to use the same token. Otherwise, you should create a new token with the `security_events` write permission and add this to the CI system's secret store. For information, see "[Building {% data variables.product.prodname_github_apps %}](/developers/apps/building-github-apps)" and "[Creating a personal access token](/github/authenticating-to-github/creating-a-personal-access-token)."
+Each CI server needs a {% data variables.product.prodname_github_app %} or {% data variables.product.pat_generic %} for the {% data variables.product.prodname_codeql_cli %} to use to upload results to {% data variables.product.product_name %}. You must use an access token or a {% data variables.product.prodname_github_app %} with the `security_events` write permission. If CI servers already use a token with this scope to checkout repositories from {% data variables.product.product_name %}, you could potentially allow the {% data variables.product.prodname_codeql_cli %} to use the same token. Otherwise, you should create a new token with the `security_events` write permission and add this to the CI system's secret store. For information, see "[Building {% data variables.product.prodname_github_apps %}](/developers/apps/building-github-apps)" and "[Creating a {% data variables.product.pat_generic %}](/github/authenticating-to-github/creating-a-personal-access-token)."
 
 ## Next steps
 

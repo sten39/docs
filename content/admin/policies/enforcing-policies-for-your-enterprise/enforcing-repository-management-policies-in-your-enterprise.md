@@ -56,7 +56,7 @@ You can enforce policies to control how members of your enterprise on {% data va
 
 Each time someone creates a new repository within your enterprise, that person must choose a visibility for the repository. When you configure a default visibility setting for the enterprise, you choose which visibility is selected by default. For more information on repository visibility, see "[About repositories](/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility)."
 
-If an enterprise owner disallows members from creating certain types of repositories, members will not be able to create that type of repository even if the visibility setting defaults to that type. For more information, see "[Setting a policy for repository creation](#setting-a-policy-for-repository-creation)."
+If an enterprise owner disallows members from creating certain types of repositories, members will not be able to create that type of repository even if the visibility setting defaults to that type. For more information, see "[Enforcing a policy for repository creation](#enforcing-a-policy-for-repository-creation)."
 
 {% data reusables.enterprise-accounts.access-enterprise %}
 {% ifversion ghes or ghae %}
@@ -166,7 +166,7 @@ Across all organizations owned by your enterprise, you can set the default branc
 
 Across all organizations owned by your enterprise, you can allow members with admin access to change a repository's visibility, restrict repository visibility changes to organization owners, or allow owners to administer the setting on the organization level. When you prevent members from changing repository visibility, only enterprise owners can change the visibility of a repository.
 
-If an enterprise owner has restricted repository creation to organization owners only, then members will not be able to change repository visibility. If an enterprise owner has restricted member repository creation to private repositories only, then members will only be able to change the visibility of a repository to private. For more information, see "[Setting a policy for repository creation](#setting-a-policy-for-repository-creation)."
+If an enterprise owner has restricted repository creation to organization owners only, then members will not be able to change repository visibility. If an enterprise owner has restricted member repository creation to private repositories only, then members will only be able to change the visibility of a repository to private. For more information, see "[Enforcing a policy for repository creation](#enforcing-a-policy-for-repository-creation)."
 
 {% data reusables.enterprise-accounts.access-enterprise %}
 {% data reusables.enterprise-accounts.policies-tab %}
@@ -304,7 +304,7 @@ You can override the default inherited settings by configuring the settings for 
 
 {% data reusables.enterprise_user_management.disclaimer-for-git-read-access %}
 
-If you have [enabled private mode](/enterprise/admin/configuration/enabling-private-mode) for {% data variables.product.product_location %}, you can allow repository administrators to enable anonymous Git read access to public repositories.
+If you have [enabled private mode](/enterprise/admin/configuration/enabling-private-mode) for {% data variables.location.product_location %}, you can allow repository administrators to enable anonymous Git read access to public repositories.
 
 Enabling anonymous Git read access allows users to bypass authentication for custom tools on your enterprise. When you or a repository administrator enable this access setting for a repository, unauthenticated Git operations (and anyone with network access to {% data variables.product.product_name %}) will have read access to the repository without authentication.
 

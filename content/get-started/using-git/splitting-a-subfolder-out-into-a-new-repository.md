@@ -30,7 +30,7 @@ If you create a new clone of the repository, you won't lose any of your Git hist
    $ cd REPOSITORY-NAME
    ```
 
-5. To filter out the subfolder from the rest of the files in the repository, run [`git filter-repo`](https://github.com/newren/git-filter-repo), supplying this information:
+5. To filter out the subfolder from the rest of the files in the repository, install [`git-filter-repo`](https://github.com/newren/git-filter-repo), then run `git filter-repo` with the following arguments.
    - `FOLDER-NAME`: The folder within your project where you'd like to create a separate repository.
 
    {% windows %}
@@ -54,7 +54,7 @@ If you create a new clone of the repository, you won't lose any of your Git hist
 
 6. [Create a new repository](/articles/creating-a-new-repository/) on {% data variables.product.product_name %}.
 
-7. At the top of your new repository on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}'s Quick Setup page, click {% octicon "clippy" aria-label="The copy to clipboard icon" %} to copy the remote repository URL.
+7. At the top of your new repository on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.location.product_location %}{% endif %}'s Quick Setup page, click {% octicon "clippy" aria-label="The copy to clipboard icon" %} to copy the remote repository URL.
 	
    ![Copy remote repository URL field](/assets/images/help/repository/copy-remote-repository-url-quick-setup.png)
 

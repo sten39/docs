@@ -41,7 +41,7 @@ Before you begin, you'll need to download Node.js and create a public {% data va
 
   {% ifversion fpt or ghes > 3.3 or ghae > 3.3 or ghec %}https://nodejs.org/en/download/{% else %}https://nodejs.org/en/download/releases/{% endif %}
 
-1. Create a new public repository on {% data variables.product.product_location %} and call it "hello-world-javascript-action". For more information, see "[Create a new repository](/articles/creating-a-new-repository)."
+1. Create a new public repository on {% data variables.location.product_location %} and call it "hello-world-javascript-action". For more information, see "[Create a new repository](/articles/creating-a-new-repository)."
 
 1. Clone your repository to your computer. For more information, see "[Cloning a repository](/articles/cloning-a-repository)."
 
@@ -141,29 +141,31 @@ In your `hello-world-javascript-action` directory, create a `README.md` file tha
 - Environment variables the action uses.
 - An example of how to use your action in a workflow.
 
-```markdown{:copy}
+````markdown{:copy}
 # Hello world javascript action
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
 ## Inputs
 
-## `who-to-greet`
+### `who-to-greet`
 
 **Required** The name of the person to greet. Default `"World"`.
 
 ## Outputs
 
-## `time`
+### `time`
 
 The time we greeted you.
 
 ## Example usage
 
+```yaml
 uses: actions/hello-world-javascript-action@v1.1
 with:
   who-to-greet: 'Mona the Octocat'
 ```
+````
 
 ## Commit, tag, and push your action to GitHub
 
@@ -269,3 +271,10 @@ jobs:
 From your repository, click the **Actions** tab, and select the latest workflow run. Under **Jobs** or in the visualization graph, click **A job to say hello**. You should see "Hello Mona the Octocat" or the name you used for the `who-to-greet` input and the timestamp printed in the log.
 
 ![A screenshot of using your action in a workflow](/assets/images/help/repository/javascript-action-workflow-run-updated-2.png)
+
+## Template repositories for creating JavaScript actions
+
+{% data variables.product.prodname_dotcom %} provides template repositories for creating JavaScript and TypeScript actions. You can use these templates to quickly get started with creating a new action that includes tests, linting, and other recommended practices.
+
+* [`javascript-action` template repository](https://github.com/actions/javascript-action)
+* [`typescript-action` template repository](https://github.com/actions/typescript-action)

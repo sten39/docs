@@ -15,7 +15,7 @@ topics:
   - GitHub search
 shortTitle: Search for repositories
 ---
-You can search for repositories globally across all of {% data variables.product.product_location %}, or search for repositories within a particular organization. For more information, see "[About searching on {% data variables.product.prodname_dotcom %}](/search-github/getting-started-with-searching-on-github/about-searching-on-github)."
+You can search for repositories globally across all of {% data variables.location.product_location %}, or search for repositories within a particular organization. For more information, see "[About searching on {% data variables.product.prodname_dotcom %}](/search-github/getting-started-with-searching-on-github/about-searching-on-github)."
 
 To include forks in the search results, you will need to add `fork:true` or `fork:only` to your query. For more information, see "[Searching in forks](/search-github/searching-on-github/searching-in-forks)."
 
@@ -166,6 +166,15 @@ You can search repositories based on whether the repositories are mirrors and ho
 |  `mirror:false` | [**mirror:false GNOME**](https://github.com/search?utf8=%E2%9C%93&q=mirror%3Afalse+GNOME&type=) matches repositories that are not mirrors and contain the word "GNOME."
 
 {% endif %}
+
+## Search based on whether a repository is a template
+
+You can search repositories based on whether the repositories are templates. For more information, see "[Creating a template repository](/repositories/creating-and-managing-repositories/creating-a-template-repository)".
+
+| Qualifier  | Example
+| ------------- | -------------
+| `template:true` | [**template:true GNOME**](https://github.com/search?utf8=%E2%9C%93&q=template%3Atrue+GNOME&type=) matches repositories that are templates and contain the word "GNOME".
+| `template:false` | [**template:false GNOME**](https://github.com/search?utf8=%E2%9C%93&q=template%3Afalse+GNOME&type=) matches repositories that are not templates and contain the word "GNOME".
 
 ## Search based on whether a repository is archived
 

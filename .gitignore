@@ -14,6 +14,7 @@ coverage/
 .next
 .eslintcache
 *.tsbuildinfo
+translations/
 
 # blc: broken link checker
 blc_output.log
@@ -26,3 +27,7 @@ lib/redirects/.redirects-cache*.json
 # During the preview deploy untrusted user code may be cloned into this directory
 # We ignore it from git to keep things deterministic
 user-code/
+
+# Logs from scripts
+script/logs/
+external-link-checker-db.json

@@ -38,6 +38,12 @@ The benefits of streaming audit data include:
 
 Enterprise owners can set up{% ifversion pause-audit-log-stream %}, pause,{% endif %} or delete a stream at any time. The stream exports the audit and Git events data for all of the organizations in your enterprise.
 
+{% note %}
+
+**Note:** All audit logs are streamed in JSON format.
+
+{% endnote %}
+
 ## Setting up audit log streaming
 
 You set up the audit log stream on {% data variables.product.product_name %} by following the instructions for your provider.
@@ -311,7 +317,7 @@ To stream audit logs to Splunk's HTTP Event Collector (HEC) endpoint you must ma
 {% ifversion pause-audit-log-stream %}
 ## Pausing audit log streaming
 
-Pausing the stream allows you to perform maintenance on the receiving application without losing audit data. Audit logs are stored for up to seven days on {% data variables.product.product_location %} and are then exported when you unpause the stream.
+Pausing the stream allows you to perform maintenance on the receiving application without losing audit data. Audit logs are stored for up to seven days on {% data variables.location.product_location %} and are then exported when you unpause the stream.
 
 {% ifversion streaming-datadog %}
 Datadog only accepts logs from up to 18 hours in the past. If you pause a stream to a Datadog endpoint for more than 18 hours, you risk losing logs that Datadog won't accept after you resume streaming.

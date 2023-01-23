@@ -73,6 +73,10 @@ When you create a branch rule, the branch you specify doesn't have to exist yet 
 {% endif %}
    - Optionally, if the repository is part of an organization, select **Restrict who can dismiss pull request reviews**. Then, search for and select the actors who are allowed to dismiss pull request reviews. For more information, see "[Dismissing a pull request review](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/dismissing-a-pull-request-review)."
      ![Restrict who can dismiss pull request reviews checkbox]{% ifversion integration-branch-protection-exceptions %}(/assets/images/help/repository/PR-review-required-dismissals-with-apps.png){% else %}(/assets/images/help/repository/PR-review-required-dismissals.png){% endif %}
+{% ifversion last-pusher-require-approval %}
+   - Optionally, to require someone other than the last person to push to a branch to approve a pull request prior to merging, select **Require approval from someone other than the last pusher**. For more information, see "[About protected branches](/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)."
+     ![Require review from someone other than the last pusher](/assets/images/help/repository/last-pusher-review-required.png)
+{% endif %}
 1. Optionally, enable required status checks. For more information, see "[About status checks](/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks)."
    - Select **Require status checks to pass before merging**.
      ![Required status checks option](/assets/images/help/repository/required-status-checks.png)
@@ -99,10 +103,16 @@ When you create a branch rule, the branch you specify doesn't have to exist yet 
 1. Optionally, to choose which environments the changes must be successfully deployed to before merging, select **Require deployments to succeed before merging**, then select the environments.
    ![Require successful deployment option](/assets/images/help/repository/require-successful-deployment.png)
 {%- endif %}
+{% ifversion lock-branch %}
+1. Optionally, select **Lock branch** to make branch read-only.
+![Screenshot of the checkbox to lock a branch](/assets/images/help/repository/lock-branch.png) 
+   -  Optionally, to allow fork syncing, select **Allow fork syncing**.
+![Screenshot of the checkbox to allow fork syncing](/assets/images/help/repository/lock-branch-forksync.png) 
+{%- endif %}
 1. Optionally, select {% ifversion bypass-branch-protections %}**Do not allow bypassing the above settings**.
 ![Do not allow bypassing the above settings checkbox](/assets/images/help/repository/do-not-allow-bypassing-the-above-settings.png){% else %}**Apply the rules above to administrators**.
 ![Apply the rules above to administrators checkbox](/assets/images/help/repository/include-admins-protected-branches.png){% endif %}
-1. Optionally,{% ifversion fpt or ghec %} if your repository is owned by an organization using {% data variables.product.prodname_team %} or {% data variables.product.prodname_ghe_cloud %},{% endif %} enable branch restrictions.
+1. Optionally,{% ifversion fpt or ghec %} in public repositories owned by a {% data variables.product.prodname_free_user %} organization and in all repositories owned by an organization using {% data variables.product.prodname_team %} or {% data variables.product.prodname_ghe_cloud %},{% endif %} enable branch restrictions.
    - Select **Restrict who can push to matching branches**.
      ![Branch restriction checkbox](/assets/images/help/repository/restrict-branch.png){% ifversion restrict-pushes-create-branch %}
    - Optionally, to also restrict the creation of matching branches, select **Restrict pushes that create matching branches**.

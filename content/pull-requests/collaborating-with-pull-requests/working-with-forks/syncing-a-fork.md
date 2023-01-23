@@ -52,7 +52,7 @@ If the changes from the upstream repository cause conflict then the {% data vari
 
 ## Syncing a fork branch from the command line
 
-Before you can sync your fork with an upstream repository, you must [configure a remote that points to the upstream repository](/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-for-a-fork) in Git.
+Before you can sync your fork with an upstream repository, you must configure a remote that points to the upstream repository in Git. For more information, see "[Configuring a remote repository for a fork](/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork)."
 
 {% data reusables.command_line.open_the_multi_os_terminal %}
 2. Change the current working directory to your local project.
@@ -100,6 +100,6 @@ Before you can sync your fork with an upstream repository, you must [configure a
 
 {% tip %}
 
-**Tip**: Syncing your fork only updates your local copy of the repository. To update your fork on {% data variables.product.product_location %}, you must [push your changes](/github/getting-started-with-github/pushing-commits-to-a-remote-repository/).
+**Tip**: Syncing your fork only updates your local copy of the repository. To update your fork on {% data variables.location.product_location %}, you must [push your changes](/github/getting-started-with-github/pushing-commits-to-a-remote-repository/).
 
 {% endtip %}
